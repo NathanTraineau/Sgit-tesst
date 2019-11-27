@@ -1,6 +1,8 @@
 # Sgit
 Scala git like program
 
+To use `sgit` please make sure you have `sbt` installed.
+
 Clone this repository and cd into the project directory.
 
 How to run the program : 
