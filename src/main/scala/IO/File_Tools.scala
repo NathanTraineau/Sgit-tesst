@@ -85,9 +85,14 @@ object File_Tools {
     val filename = file.getAbsolutePath
     val bufferedSource = Source.fromFile(filename)
     val lines = bufferedSource.getLines()
-    val l = lines.toList
-    bufferedSource.close
-    l//garezgzg
+    try {
+      val l = lines.toList
+      bufferedSource.close
+      l
+    }catch{
+      case _: Throwable => return List[String]()
+    }
+
   }
 
 

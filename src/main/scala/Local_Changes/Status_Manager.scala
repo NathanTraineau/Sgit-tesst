@@ -6,6 +6,7 @@ import Commit_History.Log_Manager
 import Create.Repository
 import IO.{File_Tools, Output}
 import Local_Changes.Diff_Manager.diff_toString
+import Local_Changes.Head_Manager
 
 object Status_Manager {
 
@@ -28,7 +29,7 @@ object Status_Manager {
         val blob_list_lines = blob_Manager.get_blob_list_index_line(blob_list)
         val set_Relationship_stage_untracked : Set_Relationship = diff_class.get_set_relationship_static(blob_list_lines,index)
         val stage_untracked_string : String = status_toString(set_Relationship_stage_untracked)
-        Output.print_sgit("Here is the change to be comitted \n"+ commit_stage_string + " \n Here are the untracked changes \n" + stage_untracked_string)
+        Output.print_sgit("Here is the changes to be comitted \n"+ commit_stage_string + "\nHere are the untracked changes \n" + stage_untracked_string)
       }
       case _ => None
     } //vreve
@@ -40,6 +41,7 @@ object Status_Manager {
     val last_commit_sha1 = branch.get_current_commit_sha1()
     val commit_index = ""
     if(last_commit_sha1 == "0"*40){
+      Output.print_sgit("On branch "+ branch.get_current_branch_name() + "\nYou have no commits yet \n")
       val commit_index =  "" :: Nil
       List[String]()
     }else {
@@ -61,7 +63,7 @@ object Status_Manager {
         case Some(file) => get_blob_working_tree_file_path_function(file,read_in_file_function)
         case None => ""
       }
-      val modified_introduction = s"${relationship.new_Blob_file_name} has been modified \n"
+      val modified_introduction = s"${name} has been modified \n"
       val new_set = Set_Relationship(set_Relationship.unmodified,set_Relationship.modified.tail,set_Relationship.renamed,set_Relationship.created,set_Relationship.deleted)
       diff_toString(new_set, str + modified_introduction + "\n")
     }else
