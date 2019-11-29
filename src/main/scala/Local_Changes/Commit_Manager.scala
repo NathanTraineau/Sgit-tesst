@@ -13,9 +13,8 @@ case class Commit(name : String, blob_lines_from_index : List[String], commit_pa
   val file_name : String = sha1.slice(2,sha1.length)
   val blob_lines : List[String] = Commit_Manager.withdraw_deleted_files_from_blob_lines(blob_lines_from_index)
 }
-//ffhizhezi
-class Commit_Manager(repo : Repository){
 
+class Commit_Manager(repo : Repository){
   def create_commit_file(commit: Commit, write_file_function : (File,String)  => Unit = File_Tools.write_in_file,
                          date : String = Date_Tool.get_Date_As_String(),
                          repo_sgit_path : String = repo.get_sgith_path()): File = {
