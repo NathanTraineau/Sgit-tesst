@@ -8,7 +8,11 @@ scalaVersion := "2.13.1"
 parallelExecution in Test := false
 
 
-assemblyMergeStrategy in assembly := {
+/*assemblyMergeStrategy in assembly := {
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
   case x => MergeStrategy.first
-}
+}*/
+import sbtassembly.AssemblyPlugin.defaultUniversalScript
+target in assembly := file("./jar")
+assemblyJarName in assembly := "sgit.jar"
+assemblyOption in assembly := (assemblyOption in assembly).value.copy(prependShellScript = Some(defaultUniversalScript(shebang = false)))

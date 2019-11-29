@@ -5,6 +5,4 @@ object Main {
         val rep = scala.io.StdIn.readLine()
         Command_Parser.parser(rep);
   }
-
-
 }

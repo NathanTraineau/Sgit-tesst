@@ -3,6 +3,8 @@
 # Scala
 *.class
 *.log
+*.idea
+.idea\*
 
 # Sbt
 dist/*
