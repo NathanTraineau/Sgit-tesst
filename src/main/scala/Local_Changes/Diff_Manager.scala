@@ -224,22 +224,10 @@ def loop(new_file_lines :List[String], former_file_lines :List[String], list_cha
         case Some(file) => get_blob_working_tree_file_path_function(file,read_in_file_function)
         case None => ""
       }
-      val modified_introduction = s"${relationship.new_Blob_file_name} has been modified \n"
+      val modified_introduction = s"${name} has been modified \n"
       val modif_file = relationship.list_changes
       val modif_to_string = local_diff_toString(modif_file)
       val new_set = Set_Relationship(set_Relationship.unmodified,set_Relationship.modified.tail,set_Relationship.renamed,set_Relationship.created,set_Relationship.deleted)
-      diff_toString(new_set, str + modified_introduction + modif_to_string + "\n")
-    }else
-    if(set_Relationship.created.nonEmpty) {
-      val relationship = set_Relationship.created.head
-      val name = relationship.new_blob_file match {
-        case Some(file) => get_blob_working_tree_file_path_function(file,read_in_file_function)
-        case None => ""
-      }
-      val modified_introduction = s"${name} has been created \n"
-      val modif_file = relationship.list_changes
-      val modif_to_string = local_diff_toString(modif_file)
-      val new_set = Set_Relationship(set_Relationship.unmodified,set_Relationship.modified,set_Relationship.renamed,set_Relationship.created.tail,set_Relationship.deleted)
       diff_toString(new_set, str + modified_introduction + modif_to_string + "\n")
     }else
     if(set_Relationship.deleted.nonEmpty) {
@@ -306,9 +294,6 @@ def loop(new_file_lines :List[String], former_file_lines :List[String], list_cha
     }
   }
 
-    def print_local_diff(local_diff_string : String):Unit = {
-      print(local_diff_string)
-    }
 
   @scala.annotation.tailrec
   def count_type(changes : List[Change], created : Int = 0, deleted : Int = 0): List[Int] = {
