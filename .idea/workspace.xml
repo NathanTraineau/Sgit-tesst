@@ -7,19 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c824d0f-0fc4-43c5-852a-607ce3b51155" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Sgit-build.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Sgit.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jar/sgit" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Sgit Retry-build.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Sgit Retry.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/installation.sh" beforeDir="false" afterPath="$PROJECT_DIR$/installation.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Local_Changes/Commit_Manager.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Local_Changes/Commit_Manager.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jar/sgit" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
