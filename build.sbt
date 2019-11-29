@@ -12,6 +12,7 @@ parallelExecution in Test := false
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
   case x => MergeStrategy.first
 }*/
+import sbtassembly.AssemblyPlugin.defaultUniversalScript
 target in assembly := file("./jar")
 assemblyJarName in assembly := "sgit.jar"
 assemblyOption in assembly := (assemblyOption in assembly).value.copy(prependShellScript = Some(defaultUniversalScript(shebang = false)))
